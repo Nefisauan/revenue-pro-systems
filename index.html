@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fast, modern websites built for contractors, service businesses, and local companies. Free website audit available." />
-  <meta name="keywords" content="web developer, local business websites, freelance web design, SEO, fast websites, Utah web developer" />
+  <meta name="description" content="Done-for-you AI lead automation systems for local service businesses. Capture leads, follow up instantly, and book more jobs automatically." />
+  <meta name="keywords" content="lead automation, AI follow-up, local business automation, HVAC leads, missed call text back, automated booking, Utah" />
   <meta name="author" content="SEO GOAT" />
-  <meta property="og:title" content="SEO GOAT — Websites That Get Local Businesses More Customers" />
-  <meta property="og:description" content="Fast, modern websites built for contractors, service businesses, and local companies." />
+  <meta property="og:title" content="SEO GOAT — Stop Losing Jobs to Missed Calls" />
+  <meta property="og:description" content="Done-for-you AI systems that capture leads, follow up in 60 seconds, and book jobs automatically." />
   <meta property="og:type" content="website" />
-  <title>SEO GOAT — Websites That Get Local Businesses More Customers</title>
+  <title>SEO GOAT — AI Lead Automation for Local Service Businesses</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
@@ -25,11 +25,12 @@
       --accent:    #38BDF8;
       --accent2:   #818CF8;
       --green:     #34D399;
+      --red:       #F87171;
+      --yellow:    #FBBF24;
       --text:      #E2E8F0;
       --muted:     #64748B;
       --heading:   #F8FAFC;
       --radius:    12px;
-      --shadow:    0 4px 32px rgba(0,0,0,0.5);
     }
 
     html { scroll-behavior: smooth; }
@@ -43,21 +44,11 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    h1,h2,h3,h4 {
-      font-family: 'Syne', sans-serif;
-      color: var(--heading);
-      line-height: 1.15;
-    }
-
+    h1,h2,h3,h4 { font-family: 'Syne', sans-serif; color: var(--heading); line-height: 1.15; }
     a { color: var(--accent); text-decoration: none; }
     img { max-width: 100%; display: block; }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     section { padding: 100px 0; }
 
     .section-label {
@@ -74,825 +65,362 @@
       margin-bottom: 20px;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 16px;
-    }
+    .section-title { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+    .section-sub { color: var(--muted); font-size: 1.1rem; max-width: 540px; }
 
-    .section-sub {
-      color: var(--muted);
-      font-size: 1.1rem;
-      max-width: 540px;
-    }
-
-    /* ========== NAV ========== */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(8,13,26,0.85);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 0;
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    /* LOGO */
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    .logo-icon {
-      width: 38px;
-      height: 38px;
-      flex-shrink: 0;
-    }
-
-    .logo-text {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.35rem;
-      letter-spacing: -0.01em;
-      line-height: 1;
-    }
-
-    .logo-text span.seo { color: var(--heading); }
-    .logo-text span.goat { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--heading); }
-
-    .nav-cta {
-      background: var(--accent);
-      color: #080d1a !important;
-      padding: 9px 20px;
-      border-radius: 8px;
-      font-weight: 600 !important;
-      font-size: 0.875rem !important;
-      transition: opacity .2s !important;
-    }
-    .nav-cta:hover { opacity: 0.88; }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--heading);
-      border-radius: 2px;
-      transition: all .3s;
-    }
-
-    /* ========== HERO ========== */
-    #hero {
-      padding-top: 160px;
-      padding-bottom: 120px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-glow {
-      position: absolute;
-      top: -200px; left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-content { position: relative; }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(56,189,248,0.08);
-      border: 1px solid rgba(56,189,248,0.25);
-      border-radius: 100px;
-      padding: 6px 16px 6px 10px;
-      font-size: 0.825rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 32px;
-    }
-
-    .hero-badge-dot {
-      width: 7px; height: 7px;
-      background: var(--accent);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.5; transform: scale(1.3); }
-    }
-
-    .hero h1 {
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      max-width: 780px;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-
-    .hero h1 em {
-      font-style: normal;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-sub {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 40px;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-
+    /* ========== BUTTONS ========== */
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent);
-      color: #080d1a;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 14px 28px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: #080d1a;
+      font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.95rem;
+      padding: 14px 28px; border-radius: 10px; border: none; cursor: pointer;
       transition: transform .2s, box-shadow .2s;
       box-shadow: 0 0 24px rgba(56,189,248,0.25);
       text-decoration: none;
     }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 36px rgba(56,189,248,0.4);
-    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(56,189,248,0.4); }
 
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 13px 24px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: border-color .2s, color .2s;
-      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--text);
+      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.95rem;
+      padding: 13px 24px; border-radius: 10px; border: 1px solid var(--border);
+      cursor: pointer; transition: border-color .2s, color .2s; text-decoration: none;
     }
-    .btn-secondary:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-    .hero-trust {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 0.875rem;
+    /* ========== NAV ========== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(8,13,26,0.85); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border); padding: 16px 0;
     }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
 
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 38px; height: 38px; flex-shrink: 0; }
+    .logo-text { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.35rem; letter-spacing: -0.01em; line-height: 1; }
+    .logo-text span.seo { color: var(--heading); }
+    .logo-text span.goat { color: var(--accent); }
+
+    .nav-links { display: flex; list-style: none; gap: 32px; align-items: center; }
+    .nav-links a { color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--heading); }
+    .nav-cta {
+      background: var(--accent) !important; color: #080d1a !important;
+      padding: 9px 20px; border-radius: 8px; font-weight: 600 !important;
+      font-size: 0.875rem !important; transition: opacity .2s !important;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--heading); border-radius: 2px; transition: all .3s; }
+
+    /* ========== HERO ========== */
+    #hero { padding-top: 160px; padding-bottom: 120px; position: relative; overflow: hidden; }
+    .hero-glow {
+      position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.25);
+      border-radius: 100px; padding: 6px 16px 6px 10px;
+      font-size: 0.825rem; color: var(--accent); font-weight: 500; margin-bottom: 32px;
+    }
+    .hero-badge-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
+
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 5rem); max-width: 800px; margin-bottom: 24px; letter-spacing: -0.02em; }
+    .hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    .hero-sub { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--muted); max-width: 580px; margin-bottom: 40px; }
+
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 48px; }
+
+    .hero-trust { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 0.875rem; }
     .hero-trust svg { color: var(--green); flex-shrink: 0; }
 
-    /* ========== TRUST ========== */
-    #trust { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 60px 0; }
+    /* ========== TRUST BAR ========== */
+    #trust { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 0; }
 
-    .trust-bar {
-      display: flex;
-      flex-wrap: wrap;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-top: 40px;
-    }
-
+    .trust-bar { display: flex; flex-wrap: wrap; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 0; }
     .trust-bar-item {
-      flex: 1;
-      min-width: 220px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 24px 22px;
-      background: var(--bg-raised);
-      border-right: 1px solid var(--border);
+      flex: 1; min-width: 200px;
+      display: flex; align-items: center; gap: 14px;
+      padding: 22px 20px; background: var(--bg-raised); border-right: 1px solid var(--border);
     }
     .trust-bar-item:last-child { border-right: none; }
-
-    .trust-bar-icon {
-      width: 36px; height: 36px;
-      background: rgba(56,189,248,0.1);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .trust-bar-item h4 {
-      font-size: 0.875rem;
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      color: var(--heading);
-      margin-bottom: 2px;
-    }
-    .trust-bar-item p {
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
+    .trust-bar-icon { width: 36px; height: 36px; background: rgba(56,189,248,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
+    .trust-bar-item h4 { font-size: 0.875rem; font-family: 'Inter', sans-serif; font-weight: 600; color: var(--heading); margin-bottom: 2px; }
+    .trust-bar-item p { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
     @media (max-width: 860px) {
       .trust-bar-item { border-right: none; border-bottom: 1px solid var(--border); }
       .trust-bar-item:last-child { border-bottom: none; }
     }
 
-    /* ========== MID-PAGE CTA BANNER ========== */
-    .cta-banner {
-      margin-top: 64px;
-      background: linear-gradient(135deg, rgba(56,189,248,0.07) 0%, rgba(129,140,248,0.07) 100%);
-      border: 1px solid rgba(56,189,248,0.2);
-      border-radius: var(--radius);
-      padding: 48px 40px;
-      text-align: center;
+    /* ========== PROBLEM ========== */
+    #problem { background: var(--bg); }
+
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
+
+    .problem-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px;
+      transition: border-color .25s, transform .25s;
+      position: relative; overflow: hidden;
     }
-    .cta-banner h3 {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      margin-bottom: 10px;
+    .problem-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--red), #fb923c);
     }
-    .cta-banner p {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 28px;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
+    .problem-card:hover { border-color: rgba(248,113,113,0.3); transform: translateY(-3px); }
+
+    .problem-number {
+      font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800;
+      background: linear-gradient(90deg, var(--red), #fb923c);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      line-height: 1; margin-bottom: 12px;
     }
-    @media (max-width: 600px) {
-      .cta-banner { padding: 36px 20px; }
+    .problem-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .problem-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    .problem-stat {
+      display: inline-block; margin-top: 16px;
+      background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.2);
+      color: var(--red); font-size: 0.78rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 100px;
     }
 
-    /* ========== PORTFOLIO ========== */
-    #portfolio { background: var(--bg); }
+    /* ========== SOLUTION ========== */
+    #solution { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 48px;
+    .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 48px; }
+
+    .solution-steps { display: flex; flex-direction: column; gap: 0; }
+
+    .solution-step {
+      display: flex; gap: 20px; padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .solution-step:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.875rem; color: #080d1a;
     }
 
-    .project-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: border-color .25s, transform .25s, box-shadow .25s;
-    }
-    .project-card:hover {
-      border-color: rgba(56,189,248,0.3);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    .step-content h4 { font-size: 1rem; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 4px; }
+    .step-content p { font-size: 0.875rem; color: var(--muted); line-height: 1.5; }
+
+    .solution-visual {
+      background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px;
     }
 
-    .project-thumb {
-      width: 100%;
-      aspect-ratio: 16/9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      position: relative;
-      overflow: hidden;
+    .flow-item {
+      display: flex; align-items: flex-start; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .flow-item:last-child { border-bottom: none; }
+
+    .flow-icon {
+      width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .flow-icon.green  { background: rgba(52,211,153,0.12); }
+    .flow-icon.blue   { background: rgba(56,189,248,0.12); }
+    .flow-icon.purple { background: rgba(129,140,248,0.12); }
+    .flow-icon.yellow { background: rgba(251,191,36,0.12); }
+
+    .flow-item h5 { font-size: 0.875rem; font-family: 'Inter', sans-serif; font-weight: 600; color: var(--heading); margin-bottom: 3px; }
+    .flow-item p  { font-size: 0.8rem; color: var(--muted); }
+
+    .flow-badge {
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      padding: 2px 10px; border-radius: 100px; margin-top: 4px;
+    }
+    .badge-green  { background: rgba(52,211,153,0.1); color: var(--green); }
+    .badge-blue   { background: rgba(56,189,248,0.1); color: var(--accent); }
+
+    /* ========== BENEFITS ========== */
+    #benefits { background: var(--bg); }
+
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 48px; }
+
+    .benefit-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px;
+      transition: border-color .25s, transform .25s;
+    }
+    .benefit-card:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-3px); }
+
+    .benefit-icon { width: 44px; height: 44px; background: rgba(56,189,248,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 16px; }
+
+    .benefit-stat { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+    .benefit-card h4 { font-size: 0.975rem; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 8px; }
+    .benefit-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+    /* ========== CASE STUDY ========== */
+    #casestudy { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .case-study-card {
+      background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; margin-top: 48px;
     }
 
-    .thumb-hvac    { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
-    .thumb-byu     { background: linear-gradient(135deg, #001f5b, #002E5D, #004aad); }
-    .thumb-local   { background: linear-gradient(135deg, #0d1b2a, #1b3a4b, #0c6291); }
-    .thumb-personal{ background: linear-gradient(135deg, #10002b, #240046, #3c096c); }
-
-    .thumb-label {
-      position: absolute;
-      bottom: 12px; left: 16px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
+    .case-study-header {
+      background: linear-gradient(135deg, rgba(56,189,248,0.08) 0%, rgba(129,140,248,0.08) 100%);
+      border-bottom: 1px solid var(--border); padding: 32px 36px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
     }
 
-    .project-body { padding: 24px; }
+    .case-study-biz h3 { font-size: 1.3rem; margin-bottom: 4px; }
+    .case-study-biz p  { font-size: 0.875rem; color: var(--muted); }
 
-    .project-tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(56,189,248,0.08);
-      border: 1px solid rgba(56,189,248,0.2);
-      padding: 3px 10px;
-      border-radius: 100px;
-      margin-bottom: 12px;
+    .case-study-tag {
+      background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.25);
+      color: var(--green); font-size: 0.78rem; font-weight: 700;
+      padding: 6px 16px; border-radius: 100px; white-space: nowrap;
     }
 
-    .project-body h3 {
-      font-size: 1.15rem;
-      margin-bottom: 8px;
+    .case-study-body { padding: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+    .before-after h5 {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+    }
+    .before-after.before h5 { color: var(--red); }
+    .before-after.after h5  { color: var(--green); }
+
+    .ba-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 0.875rem; color: var(--muted); }
+    .ba-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+    .before .ba-dot { background: var(--red); }
+    .after  .ba-dot { background: var(--green); }
+
+    .case-study-results {
+      padding: 28px 36px; background: rgba(52,211,153,0.04); border-top: 1px solid var(--border);
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px;
     }
 
-    .project-body p {
-      font-size: 0.875rem;
-      color: var(--muted);
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
+    .result-stat { text-align: center; }
+    .result-stat .num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--green); display: block; line-height: 1; margin-bottom: 4px; }
+    .result-stat .label { font-size: 0.8rem; color: var(--muted); }
 
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent);
-      transition: gap .2s;
-    }
-    .project-link:hover { gap: 10px; }
+    /* ========== PRICING ========== */
+    #services { background: var(--bg); }
 
-    /* ========== SERVICES ========== */
-    #services { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 48px;
-      align-items: start;
-    }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; align-items: start; }
 
     .price-card {
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      transition: border-color .25s;
-      position: relative;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 32px 28px; transition: border-color .25s; position: relative;
     }
     .price-card:hover { border-color: rgba(56,189,248,0.3); }
-
     .price-card.featured {
       border-color: var(--accent);
-      background: linear-gradient(180deg, rgba(56,189,248,0.05) 0%, var(--bg-raised) 100%);
+      background: linear-gradient(180deg, rgba(56,189,248,0.05) 0%, var(--bg-card) 100%);
     }
-
     .featured-badge {
-      position: absolute;
-      top: -13px; left: 50%; transform: translateX(-50%);
-      background: var(--accent);
-      color: #080d1a;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 4px 16px;
-      border-radius: 100px;
-      white-space: nowrap;
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--accent); color: #080d1a; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 16px; border-radius: 100px; white-space: nowrap;
     }
 
-    .price-name {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 12px;
-    }
+    .price-name { font-size: 0.875rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .price-setup { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; color: var(--heading); line-height: 1; margin-bottom: 2px; }
+    .price-monthly { font-size: 1rem; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
+    .price-note { font-size: 0.8rem; color: var(--muted); margin-bottom: 28px; }
 
-    .price-amount {
-      font-family: 'Syne', sans-serif;
-      font-size: 2.75rem;
-      font-weight: 800;
-      color: var(--heading);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .price-period {
-      font-size: 0.825rem;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-
-    .price-features {
-      list-style: none;
-      margin-bottom: 32px;
-    }
-
-    .price-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.9rem;
-      color: var(--text);
-      padding: 7px 0;
-      border-bottom: 1px solid var(--border);
-    }
+    .price-features { list-style: none; margin-bottom: 32px; }
+    .price-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.875rem; color: var(--text); padding: 7px 0; border-bottom: 1px solid var(--border); }
     .price-features li:last-child { border-bottom: none; }
+    .check { color: var(--green); flex-shrink: 0; margin-top: 3px; }
 
-    .check {
-      color: var(--green);
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-
-    .btn-outline {
-      display: block;
-      text-align: center;
-      padding: 13px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: border-color .2s, color .2s;
-      text-decoration: none;
-    }
+    .btn-outline { display: block; text-align: center; padding: 13px; border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-weight: 600; font-size: 0.9rem; transition: border-color .2s, color .2s; text-decoration: none; }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
-    .btn-accent-block {
-      display: block;
-      text-align: center;
-      padding: 13px;
-      background: var(--accent);
-      border-radius: 8px;
-      color: #080d1a;
-      font-weight: 700;
-      font-size: 0.9rem;
-      transition: opacity .2s;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-    }
+    .btn-accent-block { display: block; text-align: center; padding: 13px; background: var(--accent); border-radius: 8px; color: #080d1a; font-weight: 700; font-size: 0.9rem; transition: opacity .2s; border: none; cursor: pointer; text-decoration: none; }
     .btn-accent-block:hover { opacity: 0.88; }
 
-    /* ========== ABOUT ========== */
-    #about { background: var(--bg); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-      margin-top: 0;
+    /* ========== CTA BANNER ========== */
+    .cta-banner {
+      margin-top: 80px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.07) 0%, rgba(129,140,248,0.07) 100%);
+      border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius);
+      padding: 56px 40px; text-align: center;
     }
-
-    .about-visual {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .stat-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .stat-row:last-child { border-bottom: none; }
-
-    .stat-label { font-size: 0.875rem; color: var(--muted); }
-    .stat-val {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--accent);
-    }
-
-    .about-text .section-label { margin-bottom: 16px; }
-    .about-text h2 { margin-bottom: 20px; }
-    .about-text p { color: var(--muted); margin-bottom: 16px; font-size: 0.975rem; }
-
-    .about-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 24px;
-    }
-
-    .stack-pill {
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      padding: 5px 14px;
-      border-radius: 100px;
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    /* ========== AUDIT ========== */
-    #audit {
-      background: var(--bg-card);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .audit-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .audit-items {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 0;
-    }
-
-    .audit-item {
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-    }
-
-    .audit-item-icon {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
-
-    .audit-item h4 {
-      font-size: 0.9rem;
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .audit-item p {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .audit-cta { margin-top: 32px; }
-    .audit-cta p { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
+    .cta-banner h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 12px; }
+    .cta-banner p { color: var(--muted); font-size: 1.05rem; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-banner .btn-primary { font-size: 1rem; padding: 16px 32px; }
 
     /* ========== CONTACT ========== */
-    #contact { background: var(--bg); }
+    #contact { background: var(--bg-card); border-top: 1px solid var(--border); }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 64px;
-      align-items: start;
-      margin-top: 48px;
-    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start; margin-top: 48px; }
+    .contact-info h3 { font-size: 1.4rem; margin-bottom: 12px; }
+    .contact-info p { color: var(--muted); font-size: 0.95rem; margin-bottom: 32px; }
 
-    .contact-info h3 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-    }
-
-    .contact-info p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 32px;
-    }
-
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
+    .contact-detail { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
     .contact-detail:last-child { border-bottom: none; }
-    .contact-detail-icon {
-      width: 36px; height: 36px;
-      background: rgba(56,189,248,0.1);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent);
-      flex-shrink: 0;
-    }
+    .contact-detail-icon { width: 36px; height: 36px; background: rgba(56,189,248,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
 
-    .contact-form {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 36px;
-    }
+    .contact-form { background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; }
 
     .form-group { margin-bottom: 20px; }
-
-    .form-group label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 8px;
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px 14px; color: var(--text);
+      font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; transition: border-color .2s; -webkit-appearance: none;
     }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 14px;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color .2s;
-      -webkit-appearance: none;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(56,189,248,0.12);
-    }
-
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(56,189,248,0.12); }
     .form-group textarea { resize: vertical; min-height: 120px; }
-
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-    .form-submit {
-      width: 100%;
-      background: var(--accent);
-      color: #080d1a;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 14px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      transition: opacity .2s, transform .2s;
-      margin-top: 4px;
-    }
+    .form-submit { width: 100%; background: var(--accent); color: #080d1a; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 14px; border-radius: 10px; border: none; cursor: pointer; transition: opacity .2s, transform .2s; margin-top: 4px; }
     .form-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+    .form-note { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 12px; }
 
-    .form-note {
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 12px;
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      background: var(--bg-card);
-      border-top: 1px solid var(--border);
-      padding: 40px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .footer-copy { font-size: 0.85rem; color: var(--muted); }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .footer-links a {
-      font-size: 0.85rem;
-      color: var(--muted);
-      transition: color .2s;
-    }
-    .footer-links a:hover { color: var(--heading); }
-
-    /* ========== DIVIDER ========== */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0;
-    }
-
-    /* ========== SUCCESS STATE ========== */
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .form-success-icon {
-      width: 56px; height: 56px;
-      background: rgba(52,211,153,0.15);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px;
-      color: var(--green);
-    }
+    .form-success { display: none; text-align: center; padding: 40px 20px; }
+    .form-success-icon { width: 56px; height: 56px; background: rgba(52,211,153,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: var(--green); }
     .form-success h4 { font-size: 1.25rem; margin-bottom: 8px; }
     .form-success p  { color: var(--muted); font-size: 0.9rem; }
 
-    /* ========== MOBILE NAV MENU ========== */
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      position: fixed;
-      top: 69px; left: 0; right: 0;
-      background: rgba(8,13,26,0.97);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 24px;
-      z-index: 99;
-      gap: 8px;
-    }
+    /* ========== FOOTER ========== */
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.85rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 0.85rem; color: var(--muted); transition: color .2s; }
+    .footer-links a:hover { color: var(--heading); }
+
+    /* ========== MOBILE MENU ========== */
+    .mobile-menu { display: none; flex-direction: column; position: fixed; top: 69px; left: 0; right: 0; background: rgba(8,13,26,0.97); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); padding: 20px 24px; z-index: 99; gap: 8px; }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      color: var(--text);
-      font-size: 1rem;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-weight: 500;
-    }
+    .mobile-menu a { color: var(--text); font-size: 1rem; padding: 10px 0; border-bottom: 1px solid var(--border); font-weight: 500; }
     .mobile-menu a:last-child { border-bottom: none; }
 
     /* ========== RESPONSIVE ========== */
     @media (max-width: 860px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
-
-      .about-grid    { grid-template-columns: 1fr; }
-      .audit-inner   { grid-template-columns: 1fr; }
-      .contact-grid  { grid-template-columns: 1fr; }
-      .form-row      { grid-template-columns: 1fr; }
-
-      .about-visual  { order: -1; }
+      .solution-grid  { grid-template-columns: 1fr; }
+      .case-study-body { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 600px) {
       section { padding: 72px 0; }
       .hero h1 { font-size: 2.4rem; }
-      .audit-items { grid-template-columns: 1fr 1fr; }
+      .cta-banner { padding: 36px 20px; }
       .contact-form { padding: 24px 20px; }
-    }
-
-    @media (max-width: 420px) {
-      .audit-items { grid-template-columns: 1fr; }
+      .case-study-header { flex-direction: column; }
+      .case-study-body { padding: 24px; }
+      .case-study-results { padding: 24px; }
     }
   </style>
 </head>
@@ -902,44 +430,31 @@
 <nav role="navigation" aria-label="Main navigation">
   <div class="container nav-inner">
     <a href="#hero" class="logo" aria-label="SEO GOAT Home">
-      <!-- LOGO SVG -->
       <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <rect width="38" height="38" rx="9" fill="#38BDF8" fill-opacity="0.12"/>
-        <!-- Goat body -->
         <ellipse cx="21" cy="23" rx="9" ry="7" fill="#38BDF8" fill-opacity="0.85"/>
-        <!-- Goat head -->
         <ellipse cx="28" cy="16" rx="5" ry="4.5" fill="#38BDF8"/>
-        <!-- Ear -->
         <ellipse cx="32.5" cy="13.5" rx="2" ry="1.2" fill="#38BDF8" opacity="0.7" transform="rotate(-20 32.5 13.5)"/>
-        <!-- Horn left -->
         <path d="M26 12 C25 9 23 8 22.5 10" stroke="#E2E8F0" stroke-width="1.4" stroke-linecap="round"/>
-        <!-- Horn right -->
         <path d="M29 11.5 C29.5 8.5 31.5 8 31.5 10" stroke="#E2E8F0" stroke-width="1.4" stroke-linecap="round"/>
-        <!-- Eye -->
         <circle cx="29.5" cy="15.5" r="1" fill="#080d1a"/>
-        <!-- Beard -->
         <path d="M27 19.5 C27.5 21 27 22 26.5 23" stroke="#38BDF8" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
-        <!-- Legs -->
         <line x1="16" y1="29" x2="15" y2="34" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
         <line x1="19" y1="30" x2="19" y2="35" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
         <line x1="23" y1="30" x2="23" y2="35" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
         <line x1="26" y1="29" x2="27" y2="34" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
-        <!-- Tail -->
         <path d="M12 22 C10 20 10 18 12 18" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-        <!-- SEO bar on chest -->
         <rect x="15" y="21" width="10" height="3" rx="1.5" fill="#080d1a" opacity="0.4"/>
       </svg>
-      <div class="logo-text">
-        <span class="seo">SEO</span><span class="goat"> GOAT</span>
-      </div>
+      <div class="logo-text"><span class="seo">SEO</span><span class="goat"> GOAT</span></div>
     </a>
 
     <ul class="nav-links">
-      <li><a href="#trust">Experience</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact" class="nav-cta">Get Free Audit</a></li>
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#solution">The System</a></li>
+      <li><a href="#services">Pricing</a></li>
+      <li><a href="#casestudy">Results</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Free Demo</a></li>
     </ul>
 
     <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
@@ -948,95 +463,203 @@
   </div>
 </nav>
 
-<!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#trust" onclick="closeMobile()">Experience</a>
-  <a href="#portfolio" onclick="closeMobile()">Portfolio</a>
-  <a href="#services" onclick="closeMobile()">Services</a>
-  <a href="#about" onclick="closeMobile()">About</a>
-  <a href="#contact" onclick="closeMobile()" style="color:var(--accent);font-weight:700">Get Free Audit</a>
+  <a href="#problem" onclick="closeMobile()">The Problem</a>
+  <a href="#solution" onclick="closeMobile()">The System</a>
+  <a href="#services" onclick="closeMobile()">Pricing</a>
+  <a href="#casestudy" onclick="closeMobile()">Results</a>
+  <a href="#contact" onclick="closeMobile()" style="color:var(--accent);font-weight:700">Book a Free Demo</a>
 </div>
 
 
-<!-- ===== SECTION 1 — HERO ===== -->
+<!-- ===== HERO ===== -->
 <section id="hero">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="container hero-content">
     <div class="hero-badge">
       <span class="hero-badge-dot" aria-hidden="true"></span>
-      Available for new projects
+      Done-For-You Lead Automation
     </div>
 
-    <h1>Websites That Bring More<br/><em>Customers To Local Businesses</em></h1>
+    <h1>Stop Losing Jobs<br/>to <em>Missed Calls & Slow Follow-Up</em></h1>
 
     <p class="hero-sub">
-      Fast, modern websites built for contractors and local service companies.
+      I build automated systems that capture every lead, respond in 60 seconds with AI, and book jobs for your business — 24 hours a day, without you lifting a finger.
     </p>
 
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">
-        <!-- arrow icon -->
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-        Get a Free Website Audit
+        Book a Free Demo
       </a>
-      <a href="#portfolio" class="btn-secondary">
-        View My Work
-      </a>
+      <a href="#solution" class="btn-secondary">See How It Works</a>
     </div>
 
     <div class="hero-trust">
       <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-      Experience maintaining live websites at Brigham Young University
+      Built for HVAC, roofing, concrete, detailing, and local service businesses
     </div>
   </div>
 </section>
 
 
-<!-- ===== SECTION 2 — TRUST BAR ===== -->
-<section id="trust" aria-labelledby="trust-heading">
+<!-- ===== TRUST BAR ===== -->
+<section id="trust" aria-label="Trust indicators">
   <div class="container">
-    <span class="section-label">Why Business Owners Hire Me</span>
-    <h2 id="trust-heading" class="section-title">What You Get</h2>
-
     <div class="trust-bar">
-
-      <div class="trust-bar-item">
-        <div class="trust-bar-icon" aria-hidden="true">
-          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-        </div>
-        <div>
-          <h4>Experience at BYU</h4>
-          <p>Maintaining a live website for a department at Brigham Young University</p>
-        </div>
-      </div>
-
-      <div class="trust-bar-item">
-        <div class="trust-bar-icon" aria-hidden="true">
-          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        </div>
-        <div>
-          <h4>Local Business Sites Built</h4>
-          <p>Multiple websites built for contractors and local service companies</p>
-        </div>
-      </div>
-
       <div class="trust-bar-item">
         <div class="trust-bar-icon" aria-hidden="true">
           <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         </div>
-        <div>
-          <h4>AI-Powered Workflow</h4>
-          <p>Modern development tools that cut build time without cutting quality</p>
-        </div>
+        <div><h4>60-Second AI Response</h4><p>Every lead gets an instant reply — day or night</p></div>
       </div>
-
       <div class="trust-bar-item">
         <div class="trust-bar-icon" aria-hidden="true">
-          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
         </div>
-        <div>
-          <h4>7–10 Day Turnaround</h4>
-          <p>Your site live in under two weeks — not months like an agency</p>
+        <div><h4>Automated SMS & Email</h4><p>Follow-up sequences that run without you</p></div>
+      </div>
+      <div class="trust-bar-item">
+        <div class="trust-bar-icon" aria-hidden="true">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <div><h4>Automated Job Booking</h4><p>Leads book appointments without calling you</p></div>
+      </div>
+      <div class="trust-bar-item">
+        <div class="trust-bar-icon" aria-hidden="true">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div><h4>More Revenue, Less Work</h4><p>You close jobs — the system handles everything else</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== PROBLEM ===== -->
+<section id="problem" aria-labelledby="problem-heading">
+  <div class="container">
+    <span class="section-label">The Problem</span>
+    <h2 id="problem-heading" class="section-title">Every Missed Call Is<br/>Money Walking Out the Door</h2>
+    <p class="section-sub">Most local service businesses are hemorrhaging leads every single day — and don't even realize it.</p>
+
+    <div class="problem-grid">
+
+      <div class="problem-card">
+        <div class="problem-number">62%</div>
+        <h3>Calls Go Unanswered</h3>
+        <p>You're on the job, driving, or off the clock. The phone rings, nobody answers, and that lead calls your competitor instead.</p>
+        <span class="problem-stat">Average cost per missed job: $400–$1,200</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-number">78%</div>
+        <h3>Customers Go With Whoever Responds First</h3>
+        <p>It doesn't matter if you're better or cheaper. If you take 4 hours to call back, the job is already gone. Speed wins every time.</p>
+        <span class="problem-stat">Avg. response time for most businesses: 3–5 hours</span>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-number">90%</div>
+        <h3>No Follow-Up System = No Deal</h3>
+        <p>Most businesses follow up once, maybe twice. But 80% of sales happen after 5+ touchpoints. Without automation, you're leaving deals on the table.</p>
+        <span class="problem-stat">Leads contacted within 5 min: 21x more likely to convert</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== SOLUTION ===== -->
+<section id="solution" aria-labelledby="solution-heading">
+  <div class="container">
+    <span class="section-label">The System</span>
+    <h2 id="solution-heading" class="section-title">One System That Handles<br/>Leads While You Work</h2>
+    <p class="section-sub">I build and manage the entire thing. You don't touch a single piece of software.</p>
+
+    <div class="solution-grid">
+
+      <div class="solution-steps">
+        <div class="solution-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>High-Converting Landing Page</h4>
+            <p>A fast, mobile-optimized page designed specifically to capture leads from your target customers — not just look pretty.</p>
+          </div>
+        </div>
+        <div class="solution-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>AI Chatbot Captures the Lead</h4>
+            <p>Even at 2am, an AI assistant greets every visitor, answers questions, and collects their name, number, and what they need.</p>
+          </div>
+        </div>
+        <div class="solution-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Instant SMS & Email Follow-Up</h4>
+            <p>The moment a lead submits, they get a text and email within 60 seconds. You get notified. The conversation starts automatically.</p>
+          </div>
+        </div>
+        <div class="solution-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Missed Call Text-Back</h4>
+            <p>When you can't answer, the system texts the caller instantly: "Hey, we just missed you — here's how to get a quick quote." Job saved.</p>
+          </div>
+        </div>
+        <div class="solution-step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>Automated Booking</h4>
+            <p>A scheduling link is sent automatically. Leads pick a time, it goes on your calendar, and you show up ready to close.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-visual">
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:20px">What happens when a lead comes in</p>
+
+        <div class="flow-item">
+          <div class="flow-icon green">🌐</div>
+          <div>
+            <h5>Visitor Lands on Your Page</h5>
+            <p>Targeted lead page or chatbot interaction</p>
+            <span class="flow-badge badge-blue">Instant</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-icon blue">🤖</div>
+          <div>
+            <h5>AI Responds in &lt; 60 Seconds</h5>
+            <p>Personalized SMS + email sent automatically</p>
+            <span class="flow-badge badge-green">Automated</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-icon purple">📋</div>
+          <div>
+            <h5>Lead Enters Your CRM Pipeline</h5>
+            <p>Tracked, tagged, and ready for follow-up sequences</p>
+            <span class="flow-badge badge-blue">Tracked</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-icon yellow">📅</div>
+          <div>
+            <h5>Booking Link Sent Automatically</h5>
+            <p>Customer picks a time — job lands on your calendar</p>
+            <span class="flow-badge badge-green">Booked</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-icon green">💰</div>
+          <div>
+            <h5>You Show Up & Close the Job</h5>
+            <p>Everything else was handled while you were working</p>
+            <span class="flow-badge badge-green">Revenue</span>
+          </div>
         </div>
       </div>
 
@@ -1045,281 +668,200 @@
 </section>
 
 
-<!-- ===== SECTION 3 — PORTFOLIO ===== -->
-<section id="portfolio" aria-labelledby="portfolio-heading">
+<!-- ===== BENEFITS ===== -->
+<section id="benefits" aria-labelledby="benefits-heading">
   <div class="container">
-    <span class="section-label">Portfolio</span>
-    <h2 id="portfolio-heading" class="section-title">Recent Work</h2>
-    <p class="section-sub">Projects spanning local businesses, university websites, and custom web builds.</p>
+    <span class="section-label">What You Get</span>
+    <h2 id="benefits-heading" class="section-title">Built for Business Owners,<br/>Not Tech People</h2>
+    <p class="section-sub">You run your business. The system handles the rest.</p>
 
-    <div class="portfolio-grid">
+    <div class="benefits-grid">
 
-      <article class="project-card">
-        <div class="project-thumb thumb-hvac">
-          <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="rgba(255,255,255,0.25)" stroke-width="1" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-          <span class="thumb-label">HVAC · Service Business</span>
+      <div class="benefit-card">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         </div>
-        <div class="project-body">
-          <span class="project-tag">Service Business</span>
-          <h3>Smith HVAC Service</h3>
-          <p>Modern HVAC website with improved mobile performance and lead capture — built to convert visitors into booked jobs.</p>
-          <a href="https://smithhvacservice.com" target="_blank" rel="noopener" class="project-link">
-            View Site
-            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-          </a>
-        </div>
-      </article>
+        <div class="benefit-stat">60s</div>
+        <h4>Response Time</h4>
+        <p>Every lead gets contacted within 60 seconds — day, night, weekend. You never lose a job to a late response again.</p>
+      </div>
 
-      <article class="project-card">
-        <div class="project-thumb thumb-byu">
-          <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="rgba(255,255,255,0.25)" stroke-width="1" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-          <span class="thumb-label">BYU · University Dept.</span>
+      <div class="benefit-card">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
-        <div class="project-body">
-          <span class="project-tag">University</span>
-          <h3>BYU Department Website</h3>
-          <p>Ongoing website management and performance improvements for a department at Brigham Young University. Live production environment, real users.</p>
-          <a href="https://b4lsac.byu.edu/homepage" target="_blank" rel="noopener" class="project-link">
-            View Site
-            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-          </a>
-        </div>
-      </article>
+        <div class="benefit-stat">24/7</div>
+        <h4>Lead Handling</h4>
+        <p>Your system is working while you sleep, while you're on a job, and while you're at your kid's game.</p>
+      </div>
 
-      <article class="project-card">
-        <div class="project-thumb thumb-local">
-          <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="rgba(255,255,255,0.25)" stroke-width="1" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline stroke-linecap="round" stroke-linejoin="round" points="9 22 9 12 15 12 15 22"/></svg>
-          <span class="thumb-label">Local Business · Redesign</span>
+      <div class="benefit-card">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
         </div>
-        <div class="project-body">
-          <span class="project-tag">Redesign</span>
-          <h3>Local Business Website Demo</h3>
-          <p>Modern redesign example for a service company — faster load times, better mobile UX, and a conversion-focused layout.</p>
-          <a href="#contact" class="project-link">
-            Get a redesign quote
-            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-          </a>
-        </div>
-      </article>
+        <div class="benefit-stat">+30%</div>
+        <h4>More Booked Jobs</h4>
+        <p>Businesses using automated follow-up systems convert 30–50% more leads into booked jobs compared to manual outreach.</p>
+      </div>
 
-      <article class="project-card">
-        <div class="project-thumb thumb-personal">
-          <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="rgba(255,255,255,0.25)" stroke-width="1" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-          <span class="thumb-label">Personal · Custom Dev</span>
+      <div class="benefit-card">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
         </div>
-        <div class="project-body">
-          <span class="project-tag">Custom Development</span>
-          <h3>Built4Life App</h3>
-          <p>Full-stack web app built for BYU student-athletes — modern design, fast performance, mobile-first layout.</p>
-          <a href="https://built4lifeapp.vercel.app" target="_blank" rel="noopener" class="project-link">
-            View Site
-            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-          </a>
-        </div>
-      </article>
+        <div class="benefit-stat">0</div>
+        <h4>Tech Knowledge Required</h4>
+        <p>I set it all up and manage it for you. You get a simple dashboard to see your leads. That's it.</p>
+      </div>
 
     </div>
-
-    <!-- Mid-page CTA -->
-    <div class="cta-banner">
-      <h3>Does Your Website Bring In Customers?</h3>
-      <p>Send me your site and I'll tell you exactly what's holding it back — for free, no strings attached.</p>
-      <a href="#contact" class="btn-primary">
-        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-        Get a Free Website Audit
-      </a>
-    </div>
-
   </div>
 </section>
 
 
-<!-- ===== SECTION 4 — SERVICES ===== -->
+<!-- ===== CASE STUDY ===== -->
+<section id="casestudy" aria-labelledby="case-heading">
+  <div class="container">
+    <span class="section-label">Real Results</span>
+    <h2 id="case-heading" class="section-title">What This Looks Like<br/>for a Real Business</h2>
+    <p class="section-sub">A realistic example of what happens when you stop relying on manual follow-up.</p>
+
+    <div class="case-study-card">
+      <div class="case-study-header">
+        <div class="case-study-biz">
+          <h3>Smith HVAC Service — Utah</h3>
+          <p>Residential HVAC contractor · 2 trucks · owner-operated</p>
+        </div>
+        <span class="case-study-tag">+$4,800/month in recovered jobs</span>
+      </div>
+
+      <div class="case-study-body">
+        <div class="before-after before">
+          <h5>Before The System</h5>
+          <div class="ba-item"><span class="ba-dot"></span><span>Missing 35–40% of inbound calls during jobs</span></div>
+          <div class="ba-item"><span class="ba-dot"></span><span>Calling leads back 3–5 hours later</span></div>
+          <div class="ba-item"><span class="ba-dot"></span><span>No follow-up after first contact attempt</span></div>
+          <div class="ba-item"><span class="ba-dot"></span><span>Losing jobs to competitors who answered first</span></div>
+          <div class="ba-item"><span class="ba-dot"></span><span>No visibility into which leads were closing or why</span></div>
+        </div>
+
+        <div class="before-after after">
+          <h5>After The System</h5>
+          <div class="ba-item"><span class="ba-dot"></span><span>Every missed call gets an instant text-back within 60 seconds</span></div>
+          <div class="ba-item"><span class="ba-dot"></span><span>AI follows up 5 times across SMS + email automatically</span></div>
+          <div class="ba-item"><span class="ba-dot"></span><span>Customers book directly — no back-and-forth phone tag</span></div>
+          <div class="ba-item"><span class="ba-dot"></span><span>All leads tracked in a simple CRM dashboard</span></div>
+          <div class="ba-item"><span class="ba-dot"></span><span>System runs 24/7 — even weekends and evenings</span></div>
+        </div>
+      </div>
+
+      <div class="case-study-results">
+        <div class="result-stat">
+          <span class="num">3–4</span>
+          <span class="label">Extra booked jobs per week</span>
+        </div>
+        <div class="result-stat">
+          <span class="num">60s</span>
+          <span class="label">Average response time (was 4hrs)</span>
+        </div>
+        <div class="result-stat">
+          <span class="num">100%</span>
+          <span class="label">Of leads followed up automatically</span>
+        </div>
+        <div class="result-stat">
+          <span class="num">$1,200</span>
+          <span class="label">Average extra revenue per week</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== PRICING ===== -->
 <section id="services" aria-labelledby="services-heading">
   <div class="container">
     <span class="section-label">Pricing</span>
-    <h2 id="services-heading" class="section-title">Website Services</h2>
-    <p class="section-sub">Straightforward packages with no hidden fees. Every site is built to perform.</p>
+    <h2 id="services-heading" class="section-title">Simple, Transparent Pricing</h2>
+    <p class="section-sub">One-time setup. Monthly system management. No contracts, no surprises.</p>
 
     <div class="pricing-grid">
 
       <div class="price-card">
-        <p class="price-name">Starter</p>
-        <div class="price-amount">$799</div>
-        <p class="price-period">One-time investment</p>
+        <p class="price-name">Starter System</p>
+        <div class="price-setup">$1,500</div>
+        <div class="price-monthly">+ $297/month</div>
+        <p class="price-note">Setup fee + monthly management</p>
         <ul class="price-features">
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>5 pages</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Mobile optimized</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Contact form</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Fast loading</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>1 revision round</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>High-converting landing page</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>AI chatbot lead capture</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Instant SMS + email follow-up</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Basic CRM pipeline</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Monthly performance report</li>
         </ul>
         <a href="#contact" class="btn-outline">Get Started</a>
       </div>
 
       <div class="price-card featured">
         <span class="featured-badge">Most Popular</span>
-        <p class="price-name">Business</p>
-        <div class="price-amount">$1,499</div>
-        <p class="price-period">One-time investment</p>
+        <p class="price-name">Growth System</p>
+        <div class="price-setup">$2,500</div>
+        <div class="price-monthly">+ $497/month</div>
+        <p class="price-note">Setup fee + monthly management</p>
         <ul class="price-features">
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Custom design</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>SEO setup</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Analytics integration</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Conversion-focused layout</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>2 revision rounds</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>30-day post-launch support</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Everything in Starter</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Missed call text-back</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Automated appointment booking</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>5-step follow-up sequence</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Custom AI responses for your biz</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Priority support</li>
         </ul>
-        <a href="#contact" class="btn-accent-block">Get Started</a>
+        <a href="#contact" class="btn-accent-block">Book a Demo</a>
       </div>
 
       <div class="price-card">
-        <p class="price-name">Growth</p>
-        <div class="price-amount">$1,499</div>
-        <p class="price-period">+ $299/month ongoing</p>
+        <p class="price-name">Full Automation</p>
+        <div class="price-setup">$3,500</div>
+        <div class="price-monthly">+ $697/month</div>
+        <p class="price-note">Setup fee + monthly management</p>
         <ul class="price-features">
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Full website build</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Landing pages</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Lead generation support</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Monthly updates &amp; reporting</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Ongoing optimization</li>
-          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Priority support</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Everything in Growth</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Multi-channel follow-up</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>AI lead qualification</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Review request automation</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>White-glove onboarding</li>
+          <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Dedicated account management</li>
         </ul>
         <a href="#contact" class="btn-outline">Get Started</a>
       </div>
 
     </div>
-  </div>
-</section>
 
-
-<!-- ===== SECTION 5 — ABOUT ===== -->
-<section id="about" aria-labelledby="about-heading">
-  <div class="container">
-    <div class="about-grid">
-
-      <div class="about-text">
-        <span class="section-label">About</span>
-        <h2 id="about-heading" class="section-title">About Me</h2>
-        <p>
-          I personally design and build fast, high-performing websites using modern development tools and AI-assisted workflows — without the overhead of an agency.
-        </p>
-        <p>
-          I work on web infrastructure and maintain the website for a department at Brigham Young University. I apply the same reliability, performance standards, and attention to detail that a live university site demands to every website I build for local businesses.
-        </p>
-        <p>
-          That means you get a site that loads fast, ranks well, works on every device, and is built to actually bring in customers — not just look good in a screenshot.
-        </p>
-
-        <div class="about-stack">
-          <span class="stack-pill">HTML / CSS / JS</span>
-          <span class="stack-pill">React</span>
-          <span class="stack-pill">Next.js</span>
-          <span class="stack-pill">Tailwind CSS</span>
-          <span class="stack-pill">SEO</span>
-          <span class="stack-pill">Performance Optimization</span>
-          <span class="stack-pill">Figma</span>
-          <span class="stack-pill">Vercel</span>
-        </div>
-      </div>
-
-      <div class="about-visual" aria-label="Key metrics">
-        <div class="stat-row">
-          <span class="stat-label">Experience</span>
-          <span class="stat-val">BYU</span>
-        </div>
-        <div class="stat-row">
-          <span class="stat-label">Sites Maintained</span>
-          <span class="stat-val">Live</span>
-        </div>
-        <div class="stat-row">
-          <span class="stat-label">Avg. Page Speed Score</span>
-          <span class="stat-val">90+</span>
-        </div>
-        <div class="stat-row">
-          <span class="stat-label">Deployment</span>
-          <span class="stat-val">Fast</span>
-        </div>
-        <div class="stat-row">
-          <span class="stat-label">Approach</span>
-          <span class="stat-val">Custom</span>
-        </div>
-      </div>
-
+    <!-- Mid-page CTA -->
+    <div class="cta-banner">
+      <h2>Not Sure Which Plan Fits You?</h2>
+      <p>Book a free 20-minute demo. I'll look at your current setup and tell you exactly what your business needs — no pitch, no pressure.</p>
+      <a href="#contact" class="btn-primary">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        Book a Free Demo
+      </a>
     </div>
+
   </div>
 </section>
 
 
-<!-- ===== SECTION 6 — FREE AUDIT ===== -->
-<section id="audit" aria-labelledby="audit-heading">
-  <div class="container">
-    <div class="audit-inner">
-
-      <div>
-        <span class="section-label">Free Offer</span>
-        <h2 id="audit-heading" class="section-title">Get a Free Website Audit</h2>
-        <div class="audit-cta">
-          <p>Send me your website and I'll review it — no sales pitch, just honest, actionable feedback you can use whether you work with me or not.</p>
-          <a href="#contact" class="btn-primary">
-            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-            Request My Free Audit
-          </a>
-        </div>
-      </div>
-
-      <div class="audit-items">
-
-        <div class="audit-item">
-          <div class="audit-item-icon" aria-hidden="true">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
-          <h4>Speed</h4>
-          <p>Load time, Core Web Vitals, and performance score</p>
-        </div>
-
-        <div class="audit-item">
-          <div class="audit-item-icon" aria-hidden="true">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          </div>
-          <h4>Mobile Performance</h4>
-          <p>Responsive layout, touch targets, and mobile UX</p>
-        </div>
-
-        <div class="audit-item">
-          <div class="audit-item-icon" aria-hidden="true">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          </div>
-          <h4>SEO Structure</h4>
-          <p>Meta tags, headings, indexability, and local SEO</p>
-        </div>
-
-        <div class="audit-item">
-          <div class="audit-item-icon" aria-hidden="true">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
-          </div>
-          <h4>Design Improvements</h4>
-          <p>Layout, clarity, calls-to-action, and conversion</p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ===== SECTION 7 — CONTACT ===== -->
+<!-- ===== CONTACT ===== -->
 <section id="contact" aria-labelledby="contact-heading">
   <div class="container">
-    <span class="section-label">Contact</span>
-    <h2 id="contact-heading" class="section-title">Let's Build Something Great</h2>
-    <p class="section-sub" style="margin-bottom:0">Ready to get more customers online? Reach out — I'll get back to you within 24 hours.</p>
+    <span class="section-label">Book a Demo</span>
+    <h2 id="contact-heading" class="section-title">See the System in Action</h2>
+    <p class="section-sub" style="margin-bottom:0">Tell me about your business. I'll show you exactly how the system works — live, on a 20-minute call.</p>
 
     <div class="contact-grid">
 
       <div class="contact-info">
-        <h3>Ready to grow your business online?</h3>
-        <p>Whether you need a brand new website or a redesign of what you already have, I'll make sure it looks great, loads fast, and actually brings in leads.</p>
+        <h3>What happens on the demo call?</h3>
+        <p>I'll walk you through the exact system, show you a live demo for a business in your industry, and give you a quote on the spot. No pressure, just clarity.</p>
 
         <div class="contact-detail">
           <div class="contact-detail-icon" aria-hidden="true">
@@ -1332,24 +874,24 @@
           <div class="contact-detail-icon" aria-hidden="true">
             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
-          <span>Utah, USA — Available Remotely</span>
+          <span>Utah, USA — Serving Businesses Nationwide</span>
         </div>
 
         <div class="contact-detail">
           <div class="contact-detail-icon" aria-hidden="true">
             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
-          <span>Typically respond within 24 hours</span>
+          <span>Demo call response within 24 hours</span>
         </div>
       </div>
 
       <div class="contact-form">
         <form id="contactForm" novalidate action="https://api.web3forms.com/submit" method="POST">
-          <!-- Web3Forms: replace YOUR_ACCESS_KEY with key from web3forms.com -->
           <input type="hidden" name="access_key" value="1cf21a2d-c080-4bef-b3f9-a47579c5a778" />
-          <input type="hidden" name="subject" value="New Lead from SEO GOAT Website" />
+          <input type="hidden" name="subject" value="New Demo Request — SEO GOAT" />
           <input type="hidden" name="from_name" value="SEO GOAT Website" />
           <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name</label>
@@ -1363,41 +905,44 @@
 
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="john@company.com" required autocomplete="email" />
+            <input type="email" id="email" name="email" placeholder="john@smithhvac.com" required autocomplete="email" />
           </div>
 
           <div class="form-group">
-            <label for="website">Your Current Website (optional)</label>
-            <input type="url" id="website" name="website" placeholder="https://yoursite.com" autocomplete="url" />
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(801) 555-0100" autocomplete="tel" />
           </div>
 
           <div class="form-group">
-            <label for="service">What are you looking for?</label>
-            <select id="service" name="service" required>
-              <option value="" disabled selected>Select a service…</option>
-              <option value="new-website">New Website</option>
-              <option value="redesign">Website Redesign</option>
-              <option value="audit">Free Website Audit</option>
-              <option value="growth">Growth Package</option>
-              <option value="other">Other / Not Sure Yet</option>
+            <label for="business">Type of Business</label>
+            <select id="business" name="business" required>
+              <option value="" disabled selected>Select your industry…</option>
+              <option value="hvac">HVAC</option>
+              <option value="roofing">Roofing</option>
+              <option value="plumbing">Plumbing</option>
+              <option value="concrete">Concrete / Landscaping</option>
+              <option value="detailing">Auto Detailing</option>
+              <option value="cleaning">Cleaning Services</option>
+              <option value="electrical">Electrical</option>
+              <option value="other">Other Service Business</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="message">Tell me about your business</label>
-            <textarea id="message" name="message" placeholder="What does your business do? What's your biggest challenge with your current website?" required></textarea>
+            <label for="message">What's your biggest challenge right now?</label>
+            <textarea id="message" name="message" placeholder="e.g. We miss a lot of calls during jobs and lose leads to competitors..." required></textarea>
           </div>
 
-          <button type="submit" class="form-submit">Send Message — It's Free</button>
-          <p class="form-note">No spam. No pressure. Just a conversation.</p>
+          <button type="submit" class="form-submit">Book My Free Demo Call</button>
+          <p class="form-note">20 minutes. No pressure. I'll show you exactly what's possible.</p>
         </form>
 
         <div class="form-success" id="formSuccess" role="alert">
           <div class="form-success-icon" aria-hidden="true">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
           </div>
-          <h4>Message Sent!</h4>
-          <p>Thanks for reaching out. I'll review your details and get back to you within 24 hours.</p>
+          <h4>Request Received!</h4>
+          <p>I'll reach out within 24 hours to schedule your demo. Check your email for confirmation.</p>
         </div>
       </div>
 
@@ -1425,17 +970,14 @@
         <line x1="26" y1="29" x2="27" y2="34" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
         <path d="M12 22 C10 20 10 18 12 18" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
       </svg>
-      <div class="logo-text" style="font-size:1rem">
-        <span class="seo">SEO</span><span class="goat"> GOAT</span>
-      </div>
+      <div class="logo-text" style="font-size:1rem"><span class="seo">SEO</span><span class="goat"> GOAT</span></div>
     </a>
-
     <p class="footer-copy">&copy; 2025 SEO GOAT. All rights reserved.</p>
-
     <ul class="footer-links">
-      <li><a href="#trust">Experience</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#solution">The System</a></li>
+      <li><a href="#services">Pricing</a></li>
+      <li><a href="#contact">Book a Demo</a></li>
     </ul>
   </div>
 </footer>
@@ -1443,8 +985,7 @@
 
 <!-- ===== JS ===== -->
 <script>
-  // Mobile menu toggle
-  const btn = document.getElementById('hamburgerBtn');
+  const btn  = document.getElementById('hamburgerBtn');
   const menu = document.getElementById('mobileMenu');
 
   btn.addEventListener('click', () => {
@@ -1457,90 +998,62 @@
     btn.setAttribute('aria-expanded', 'false');
   }
 
-  // Close mobile menu on outside click
   document.addEventListener('click', (e) => {
-    if (!btn.contains(e.target) && !menu.contains(e.target)) {
-      closeMobile();
-    }
+    if (!btn.contains(e.target) && !menu.contains(e.target)) closeMobile();
   });
 
-  // Sticky nav shadow on scroll
   const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {
-    nav.style.boxShadow = window.scrollY > 20
-      ? '0 4px 24px rgba(0,0,0,0.4)'
-      : 'none';
+    nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.4)' : 'none';
   }, { passive: true });
 
-  // Contact form — Web3Forms submission
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
+  // Contact form — Web3Forms
+  const form      = document.getElementById('contactForm');
+  const success   = document.getElementById('formSuccess');
   const submitBtn = form.querySelector('.form-submit');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Basic validation
     const required = form.querySelectorAll('[required]');
     let valid = true;
-    required.forEach(field => {
-      if (!field.value.trim()) {
-        field.style.borderColor = '#F87171';
-        valid = false;
-      } else {
-        field.style.borderColor = '';
-      }
+    required.forEach(f => {
+      if (!f.value.trim()) { f.style.borderColor = '#F87171'; valid = false; }
+      else f.style.borderColor = '';
     });
     if (!valid) return;
 
-    // Submit to Web3Forms
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
 
     try {
-      const data = new FormData(form);
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: data
-      });
+      const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
       const json = await res.json();
-
-      if (json.success) {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      } else {
-        throw new Error(json.message || 'Submission failed');
-      }
-    } catch (err) {
+      if (json.success) { form.style.display = 'none'; success.style.display = 'block'; }
+      else throw new Error(json.message);
+    } catch {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message — It\'s Free';
+      submitBtn.textContent = 'Book My Free Demo Call';
       alert('Something went wrong. Please email seogoatwebsites@gmail.com directly.');
     }
   });
 
-  // Clear validation errors on input
-  form.querySelectorAll('input, textarea, select').forEach(field => {
-    field.addEventListener('input', () => {
-      field.style.borderColor = '';
-    });
+  form.querySelectorAll('input, textarea, select').forEach(f => {
+    f.addEventListener('input', () => f.style.borderColor = '');
   });
 
-  // Smooth active nav link highlighting
+  // Scroll-based nav highlight
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         navLinks.forEach(link => {
-          link.style.color = link.getAttribute('href') === '#' + entry.target.id
-            ? 'var(--heading)'
-            : '';
+          link.style.color = link.getAttribute('href') === '#' + entry.target.id ? 'var(--heading)' : '';
         });
       }
     });
   }, { threshold: 0.4 });
-
   sections.forEach(s => observer.observe(s));
 </script>
 
