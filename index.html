@@ -248,6 +248,58 @@
     .badge-green  { background: rgba(52,211,153,0.1); color: var(--green); }
     .badge-blue   { background: rgba(56,189,248,0.1); color: var(--accent); }
 
+    /* ========== COMPARISON ========== */
+    #comparison { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .compare-wrap {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 48px;
+    }
+
+    .compare-col { position: relative; }
+    .compare-col.manual  { border-right: 1px solid var(--border); }
+
+    .compare-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 20px 28px; border-bottom: 1px solid var(--border);
+    }
+    .compare-col.manual  .compare-header { background: rgba(248,113,113,0.06); }
+    .compare-col.auto    .compare-header { background: rgba(52,211,153,0.06); }
+
+    .compare-header-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .manual  .compare-header-dot { background: var(--red); }
+    .auto    .compare-header-dot { background: var(--green); }
+
+    .compare-header h4 { font-size: 0.95rem; font-family: 'Inter', sans-serif; font-weight: 700; }
+    .manual .compare-header h4 { color: var(--red); }
+    .auto   .compare-header h4 { color: var(--green); }
+
+    /* cells live directly in the grid — every pair of adjacent cells = one row */
+    .compare-cell {
+      padding: 20px 28px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border);
+    }
+    .compare-cell:nth-child(even) { border-right: none; }
+    /* remove bottom border from last two cells */
+    .compare-wrap > .compare-cell:nth-last-child(-n+2) { border-bottom: none; }
+
+    .compare-metric { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .compare-val { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+    .compare-val.bad  { color: var(--red); }
+    .compare-val.good { color: var(--green); }
+    .compare-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+
+    .compare-summary {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0;
+      border: 1px solid rgba(52,211,153,0.2); border-radius: var(--radius);
+      background: rgba(52,211,153,0.04); margin-top: 28px; overflow: hidden;
+    }
+    .compare-sum-item {
+      padding: 20px 24px; border-right: 1px solid rgba(52,211,153,0.15); text-align: center;
+    }
+    .compare-sum-item:last-child { border-right: none; }
+    .compare-sum-item .num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--green); display: block; line-height: 1; margin-bottom: 4px; }
+    .compare-sum-item .lbl { font-size: 0.78rem; color: var(--muted); }
+
     /* ========== PROOF GALLERY ========== */
     #proof { background: var(--bg); }
 
@@ -457,6 +509,11 @@
       .case-study-body { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
+      .compare-wrap { grid-template-columns: 1fr; }
+      .compare-wrap > * { border-right: none !important; }
+      .compare-wrap > .compare-cell { border-bottom: 1px solid var(--border) !important; }
+      .compare-wrap > .compare-cell:last-child { border-bottom: none !important; }
+      .compare-summary { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 600px) {
       section { padding: 72px 0; }
@@ -708,6 +765,119 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== COMPARISON ===== -->
+<section id="comparison" aria-labelledby="comparison-heading">
+  <div class="container">
+    <span class="section-label">Manual vs Automated</span>
+    <h2 id="comparison-heading" class="section-title">What Your Team Does Now<br/>vs What the System Does</h2>
+    <p class="section-sub">The math is simple — automation does the same work faster, cheaper, and around the clock.</p>
+
+    <div class="compare-wrap">
+      <!-- Headers -->
+      <div class="compare-header manual" style="border-bottom:1px solid var(--border);background:rgba(248,113,113,0.06)">
+        <span class="compare-header-dot" style="width:10px;height:10px;border-radius:50%;background:var(--red);flex-shrink:0"></span>
+        <h4 style="font-size:0.95rem;font-family:'Inter',sans-serif;font-weight:700;color:var(--red)">Employee Doing It Manually</h4>
+      </div>
+      <div class="compare-header auto" style="border-bottom:1px solid var(--border);background:rgba(52,211,153,0.06)">
+        <span class="compare-header-dot" style="width:10px;height:10px;border-radius:50%;background:var(--green);flex-shrink:0"></span>
+        <h4 style="font-size:0.95rem;font-family:'Inter',sans-serif;font-weight:700;color:var(--green)">Revenue Pro Automated System</h4>
+      </div>
+
+      <!-- Response time -->
+      <div class="compare-cell">
+        <p class="compare-metric">Response to new lead</p>
+        <div class="compare-val bad">3–5 hrs</div>
+        <p class="compare-desc">If someone calls while you're on a job, they wait — or they call your competitor</p>
+      </div>
+      <div class="compare-cell">
+        <p class="compare-metric">Response to new lead</p>
+        <div class="compare-val good">60 sec</div>
+        <p class="compare-desc">AI texts and emails the lead the moment they reach out — day or night</p>
+      </div>
+
+      <!-- Outreach capacity -->
+      <div class="compare-cell">
+        <p class="compare-metric">Outreach emails per day</p>
+        <div class="compare-val bad">10–15</div>
+        <p class="compare-desc">1–2 hours of manual research and writing before sending a single email</p>
+      </div>
+      <div class="compare-cell">
+        <p class="compare-metric">Outreach emails per day</p>
+        <div class="compare-val good">50+</div>
+        <p class="compare-desc">Finds businesses, scores them, and sends personalized emails on a daily schedule — automatically</p>
+      </div>
+
+      <!-- Follow-up -->
+      <div class="compare-cell">
+        <p class="compare-metric">Follow-up touchpoints per lead</p>
+        <div class="compare-val bad">1–2x</div>
+        <p class="compare-desc">Follow up once, forget, lose the deal — 80% of sales close after 5+ contacts</p>
+      </div>
+      <div class="compare-cell">
+        <p class="compare-metric">Follow-up touchpoints per lead</p>
+        <div class="compare-val good">5–7x</div>
+        <p class="compare-desc">Automated SMS + email sequence runs over 7 days — every lead gets the full follow-up, every time</p>
+      </div>
+
+      <!-- Coverage -->
+      <div class="compare-cell">
+        <p class="compare-metric">Hours of coverage</p>
+        <div class="compare-val bad">8 hrs</div>
+        <p class="compare-desc">Leads after 5pm, weekends, or holidays go unanswered until the next business day</p>
+      </div>
+      <div class="compare-cell">
+        <p class="compare-metric">Hours of coverage</p>
+        <div class="compare-val good">24/7</div>
+        <p class="compare-desc">The system never sleeps — your best leads often come in at night or on weekends</p>
+      </div>
+
+      <!-- Cost -->
+      <div class="compare-cell">
+        <p class="compare-metric">Monthly cost</p>
+        <div class="compare-val bad">$2,400+</div>
+        <p class="compare-desc">Part-time employee at $15/hr × 40hrs/mo — plus training, turnover, and sick days</p>
+      </div>
+      <div class="compare-cell">
+        <p class="compare-metric">Monthly cost</p>
+        <div class="compare-val good">$97–$397</div>
+        <p class="compare-desc">Flat monthly fee — no payroll, no benefits, no sick days, no re-training</p>
+      </div>
+
+      <!-- Owner time -->
+      <div class="compare-cell">
+        <p class="compare-metric">Your time managing leads</p>
+        <div class="compare-val bad">10+ hrs</div>
+        <p class="compare-desc">Per week calling back leads, sending follow-ups, chasing quotes, playing phone tag</p>
+      </div>
+      <div class="compare-cell">
+        <p class="compare-metric">Your time managing leads</p>
+        <div class="compare-val good">&lt; 1 hr</div>
+        <p class="compare-desc">Review your dashboard, close the warm leads — the system handles everything else</p>
+      </div>
+    </div>
+
+    <div class="compare-summary">
+      <div class="compare-sum-item">
+        <span class="num">10 hrs</span>
+        <span class="lbl">Saved per week for the owner</span>
+      </div>
+      <div class="compare-sum-item">
+        <span class="num">$2,000+</span>
+        <span class="lbl">Saved vs part-time employee</span>
+      </div>
+      <div class="compare-sum-item">
+        <span class="num">5x</span>
+        <span class="lbl">More leads followed up on</span>
+      </div>
+      <div class="compare-sum-item">
+        <span class="num">300x</span>
+        <span class="lbl">Faster first response</span>
+      </div>
     </div>
   </div>
 </section>
