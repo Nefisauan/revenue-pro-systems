@@ -463,9 +463,13 @@
     }
 
     .price-name { font-size: 0.875rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
-    .price-setup { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; color: var(--heading); line-height: 1; margin-bottom: 2px; }
+    .price-setup-old { font-size: 1rem; color: var(--muted); text-decoration: line-through; margin-bottom: 4px; }
+    .price-setup-free { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+    .price-setup-free .free-val { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; color: var(--green); line-height: 1; }
+    .founding-badge { display: inline-block; background: rgba(52,211,153,0.12); color: var(--green); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 100px; border: 1px solid rgba(52,211,153,0.25); white-space: nowrap; }
     .price-monthly { font-size: 1rem; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
-    .price-note { font-size: 0.8rem; color: var(--muted); margin-bottom: 28px; }
+    .price-note { font-size: 0.8rem; color: var(--muted); margin-bottom: 12px; }
+    .price-founding-note { font-size: 0.78rem; color: var(--green); background: rgba(52,211,153,0.07); border: 1px solid rgba(52,211,153,0.2); border-radius: 6px; padding: 8px 12px; margin-bottom: 24px; line-height: 1.4; }
 
     .price-features { list-style: none; margin-bottom: 32px; }
     .price-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.875rem; color: var(--text); padding: 7px 0; border-bottom: 1px solid var(--border); }
@@ -1145,9 +1149,11 @@
 
       <div class="price-card">
         <p class="price-name">Starter System</p>
-        <div class="price-setup">$497</div>
-        <div class="price-monthly">+ $97/month</div>
-        <p class="price-note">Setup fee + monthly management</p>
+        <p class="price-setup-old">$497 setup fee</p>
+        <div class="price-setup-free"><span class="free-val">$0 setup</span><span class="founding-badge">Founding Client</span></div>
+        <div class="price-monthly">$97/month</div>
+        <p class="price-note">Monthly management only — setup is on us</p>
+        <p class="price-founding-note">We're onboarding our first Utah clients at no setup cost. Limited spots.</p>
         <ul class="price-features">
           <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>High-converting landing page</li>
           <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>AI chatbot lead capture</li>
@@ -1161,9 +1167,11 @@
       <div class="price-card featured">
         <span class="featured-badge">Most Popular</span>
         <p class="price-name">Growth System</p>
-        <div class="price-setup">$997</div>
-        <div class="price-monthly">+ $197/month</div>
-        <p class="price-note">Setup fee + monthly management</p>
+        <p class="price-setup-old">$997 setup fee</p>
+        <div class="price-setup-free"><span class="free-val">$0 setup</span><span class="founding-badge">Founding Client</span></div>
+        <div class="price-monthly">$197/month</div>
+        <p class="price-note">Monthly management only — setup is on us</p>
+        <p class="price-founding-note">We're onboarding our first Utah clients at no setup cost. Limited spots.</p>
         <ul class="price-features">
           <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Everything in Starter</li>
           <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Missed call text-back</li>
@@ -1177,9 +1185,11 @@
 
       <div class="price-card">
         <p class="price-name">Full Automation</p>
-        <div class="price-setup">$1,997</div>
-        <div class="price-monthly">+ $397/month</div>
-        <p class="price-note">Setup fee + monthly management</p>
+        <p class="price-setup-old">$1,997 setup fee</p>
+        <div class="price-setup-free"><span class="free-val">$0 setup</span><span class="founding-badge">Founding Client</span></div>
+        <div class="price-monthly">$397/month</div>
+        <p class="price-note">Monthly management only — setup is on us</p>
+        <p class="price-founding-note">We're onboarding our first Utah clients at no setup cost. Limited spots.</p>
         <ul class="price-features">
           <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Everything in Growth</li>
           <li><svg class="check" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Multi-channel follow-up</li>
